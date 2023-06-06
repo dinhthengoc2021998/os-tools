@@ -8,7 +8,7 @@ docker_ce=docker-ce_24.0.1-1~ubuntu.22.04~jammy_amd64.deb
 docker_ce_cli=docker-ce-cli_24.0.1-1~ubuntu.22.04~jammy_amd64.deb  
 docker_compose=docker-compose-plugin_2.18.1-1~ubuntu.22.04~jammy_amd64.deb 
 docker_buildx=docker-buildx-plugin_0.10.4-1~ubuntu.22.04~jammy_amd64.deb
-prefix_download_dir=/opt/install/docker
+prefix_download_dir=/opt/os-tools/docker
 
 ## Download all .rpm files
 wget $download_url/$containerd --output-document=$prefix_download_dir/$containerd

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-install_dir=/opt/install/os-tools/neovim
+install_dir=/opt/os-tools/neovim
 cd $install_dir
 
 ## Install NeoVim >= v9.0.1

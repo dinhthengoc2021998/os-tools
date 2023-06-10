@@ -25,5 +25,5 @@ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 apt update
 apt upgrade
 apt install -Y python3.10-venv
-rm -rf $nvim_dir
-cp -rf neovim-user-configs/* $nvim_dir/lua/custom/
+mkdir -p $nvim_dir/lua/custom
+cp -rf neovim-user-configs $nvim_dir/lua/custom

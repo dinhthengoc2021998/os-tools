@@ -1,6 +1,7 @@
 #!/bin/bash
 
 install_dir=/opt/os-tools/neovim
+nvim_dir=~/.config/nvim
 cd $install_dir
 
 ## Install NeoVim >= v9.0.1
@@ -13,11 +14,16 @@ chmod u+x nvim.appimage
 # Optional: exposing nvim globally.
 sudo ln -sf $install_dir/squashfs-root/AppRun /usr/bin/nvim
 
-## Install NvChad
+## Install for Python Development
+# Linux / Macos (unix)
+rm -rf ~/.config/nvim
+rm -rf ~/.local/share/nvim
+# Install NvChad
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
-# Install fonts
-fonts_dir=~/.local/share/fonts
-mkdir -p $fonts_dir
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/AnonymousPro.zip -O $fonts_dir/AnonymousPro.zip
-unzip -oq -d $fonts_dir AnonymousPro.zip 
-rm -rf AnonymousPro.zip
+
+## Install Package for Python Development
+apt update
+apt upgrade
+apt install -Y python3.10-venv
+rm -rf $nvim_dir
+cp -rf neovim-configs/nvim $nvim_dir

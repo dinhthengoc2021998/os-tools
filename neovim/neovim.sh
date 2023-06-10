@@ -24,6 +24,6 @@ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 ## Install Package for Python Development
 apt update
 apt upgrade
-apt install -Y python3.10-venv
+apt install -y python3.10-venv
 mkdir -p $nvim_dir/lua/custom
 cp -rf neovim-user-configs $nvim_dir/lua/custom

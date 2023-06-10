@@ -26,4 +26,4 @@ apt update
 apt upgrade
 apt install -Y python3.10-venv
 rm -rf $nvim_dir
-cp -rf neovim-user-configs/nvim $nvim_dir
+cp -rf neovim-user-configs/* $nvim_dir/lua/custom/

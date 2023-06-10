@@ -26,7 +26,7 @@ apt update
 apt upgrade
 apt install -y python3.10-venv
 
--- Use this Commands to Install User-Configs for Python
--- After Run the first time of VIM.
+# Use this Commands to Install User-Configs for Python
+# After Run the first time of VIM.
 #mkdir -p $nvim_dir/lua/custom
 #cp -rf neovim-user-configs/* $nvim_dir/lua/custom/

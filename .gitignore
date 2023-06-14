@@ -4,3 +4,4 @@
 **/**.zip
 **/**.appimage
 **/squashfs-root/**
+**/apache-maven**/**

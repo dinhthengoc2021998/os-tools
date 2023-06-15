@@ -8,3 +8,4 @@ rm -rf $install_dir/openjdk-$jdk_version+36_linux-x64_bin.tar.gz
 rm -rf /var/lib/jdk-$jdk_version
 mv jdk-$jdk_version/ /var/lib/jdk-$jdk_version
 ln -sf /var/lib/jdk-$jdk_version/bin/java /usr/bin/java
+ln -sf /var/lib/jdk-$jdk_version/bin/javac /usr/bin/javac

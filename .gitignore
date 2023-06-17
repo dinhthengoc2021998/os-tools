@@ -5,3 +5,4 @@
 **/**.appimage
 **/squashfs-root/**
 **/apache-maven**/**
+**/gradle-**/**

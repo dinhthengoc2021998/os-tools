@@ -31,6 +31,9 @@ end
 
 vim.cmd "autocmd! TermOpen term://* lua set_terminal_keymaps()"
 
+-- Insert --
+lvim.keys.insert_mode["jk"] = "<ESC>"
+
 -- Tabs --
 -- keymap("n", "\\", ":tabnew %<cr>", opts)
 -- keymap("n", "\\", ":tabnew %<cr>", opts)

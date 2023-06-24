@@ -13,4 +13,3 @@ ln -sf /var/lib/jdk-$jdk_version/bin/java /usr/bin/java
 ln -sf /var/lib/jdk-$jdk_version/bin/javac /usr/bin/javac
 ln -sf /var/lib/jdk-$jdk_version/bin/jar /usr/bin/jar
 ln -sf /var/lib/jdk-$jdk_version/bin/jlink /usr/bin/jlink
-

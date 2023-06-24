@@ -18,15 +18,15 @@ sudo ln -sf $install_dir/squashfs-root/AppRun /usr/bin/nvim
 # Linux / Macos (unix)
 rm -rf ~/.config/nvim
 rm -rf ~/.local/share/nvim
-# Install NvChad
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
-
-## Install Package for Python Development
-apt update
-apt upgrade
-apt install -y python3.10-venv
-
-# Use this Commands to Install User-Configs for Python
-# After Run the first time of VIM.
-#mkdir -p $nvim_dir/lua/custom
-#cp -rf neovim-user-configs/* $nvim_dir/lua/custom/
+# # Install NvChad
+# git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+#
+# ## Install Package for Python Development
+# apt update
+# apt upgrade
+# apt install -y python3.10-venv
+#
+# # Use this Commands to Install User-Configs for Python
+# # After Run the first time of VIM.
+# #mkdir -p $nvim_dir/lua/custom
+# #cp -rf neovim-user-configs/* $nvim_dir/lua/custom/

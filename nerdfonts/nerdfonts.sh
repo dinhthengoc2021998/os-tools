@@ -1,8 +1,8 @@
 #!/bin/bash
 
 install_dir=/opt/os-tools/nerdfonts
-fonts_download_url=https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip
-filename=Hack.zip
+fonts_download_url=https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Go-Mono.zip
+filename=Go-Mono.zip
 
 # Install Specific Fonts
 cd $install_dir

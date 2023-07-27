@@ -1,0 +1,15 @@
+# Install Tools/App for Ubuntu-22.04 (branch: main)
+- discord
+- docker
+- firewalld
+- golang
+- gradle
+- java
+- k8s
+- kvm
+- lvim
+- maven
+- neovim
+- nerdfonts
+- speedtest
+- tmux

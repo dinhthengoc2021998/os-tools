@@ -1,8 +1,0 @@
-C-Space: prefix key 
-C-Space-h: split horizontal panes
-C-Space-v: split vertical panes
-C-h: Move to left panes
-C-l: Move to right panes
-C-j: Move to bottom panes
-C-k: Move to up panes
-

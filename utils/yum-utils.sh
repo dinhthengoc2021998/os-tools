@@ -11,6 +11,7 @@ sudo yum install -y epel-release
 sudo yum install -y telnet
 # --- htop ---
 sudo yum install -y htop
-touch ~/.config/htop/htoprc
+mkdir -p /root/.config/htop
+touch /root/.config/htop/htoprc
 cat $install_dir/htoprc >> ~/.config/htop/htoprc
 

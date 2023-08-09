@@ -3,3 +3,5 @@
 - Kubernetes (single-node)
 - Utils: [htop]
 - Helm-charts for K8s
+- ansible
+- python

@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  kubespray: 
+    image: quay.io/kubespray/kubespray:v2.22.1
+    container_name: kubespray
+    restart: always
+    command: tail -f /dev/null
+    extra_hosts:
+      - "data-vm01:10.84.86.40"
+      - "data-vm02:10.84.86.41"
+      - "data-vm03:10.84.86.42"
+    volumes:
+      # - ./setup-kubespray.sh:/kubespray/setup-kubespray.sh
+      - /root/.ssh/id_rsa:/root/.ssh/id_rsa
+    networks:
+      - deploy-k8s-cluster_default
+
+networks:
+  deploy-k8s-cluster_default:
+    external: true
+    name: deploy-k8s-cluster_default

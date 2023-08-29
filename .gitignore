@@ -6,3 +6,8 @@
 **/squashfs-root/**
 **/apache-maven**/**
 **/gradle-**/**
+
+#############
+# --- KVM ---
+#############
+**/kvm/CentOS-7-x86_64-Minimal-2009.iso 

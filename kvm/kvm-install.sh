@@ -35,8 +35,9 @@ mkdir -p /dev/net
 mknod /dev/net/tun c 10 200
 chmod 600 /dev/net/tun
 
+# Cant use this to install (Not successed yet)
 virt-install \
-  --name centos7 \
+  --name vm01 \
   --ram 1024 \
   --disk path=/var/kvm/images/centos7.img,size=3 \
   --vcpus 1 \
@@ -45,5 +46,5 @@ virt-install \
   --network bridge=br0 \
   --graphics none \
   --console pty,target_type=serial \
-  --location '/opt/os-tools/kvm/CentOS-7-x86_64-Minimal-2009.iso' \
+  --location '/tmp/CentOS-7-x86_64-Minimal-2009.iso' \
   --extra-args 'console=ttyS0,115200n8 serial'

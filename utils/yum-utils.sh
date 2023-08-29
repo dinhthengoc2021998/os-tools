@@ -15,3 +15,7 @@ mkdir -p /root/.config/htop
 touch /root/.config/htop/htoprc
 cat $install_dir/htoprc >> ~/.config/htop/htoprc
 
+####################
+# --- Management ---
+####################
+sudo yum install -y tree

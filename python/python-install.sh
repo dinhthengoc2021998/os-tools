@@ -12,7 +12,7 @@ echo "#########################################"
 ######################
 # --- Download ---
 ######################
-yum install gcc openssl-devel bzip2-devel libffi-devel -y
+yum install gcc openssl-devel bzip2-devel libffi-devel python3-pip -y
 curl https://www.python.org/ftp/python/3.10.0/Python-3.10.0.tgz --output $dir_scripts/Python-3.10.0.tgz
 tar -xzf $dir_scripts/Python-3.10.0.tgz -C $dir_scripts
 

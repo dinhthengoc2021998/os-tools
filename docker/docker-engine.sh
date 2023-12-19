@@ -16,7 +16,8 @@ docker_ce=docker-ce_24.0.1-1~ubuntu.22.04~jammy_amd64.deb
 docker_ce_cli=docker-ce-cli_24.0.1-1~ubuntu.22.04~jammy_amd64.deb  
 docker_compose=docker-compose-plugin_2.18.1-1~ubuntu.22.04~jammy_amd64.deb 
 docker_buildx=docker-buildx-plugin_0.10.4-1~ubuntu.22.04~jammy_amd64.deb
-prefix_download_dir=/opt/os-tools/docker
+abs_path=$(readlink -f $0)
+prefix_download_dir=`dirname $abs_path`
 #################################
 # --- Download all .rpm files ---
 #################################
@@ -46,3 +47,12 @@ sudo usermod -aG docker root
 ##############################
 sudo systemctl start docker  
 echo "Status of Docker: $(sudo systemctl status docker | grep Active)"
+
+##################
+# --- Cleaning ---
+################## 
+rm -rf $prefix_download_dir/$containerd
+rm -rf $prefix_download_dir/$docker_ce
+rm -rf $prefix_download_dir/$docker_ce_cli
+rm -rf $prefix_download_dir/$docker_buildx
+rm -rf $prefix_download_dir/$docker_compose

@@ -11,11 +11,11 @@ apt install -y dpkg-dev
 #####################################
 app_arch=$(dpkg-architecture -q DEB_BUILD_ARCH)
 download_url=https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/$app_arch
-containerd=containerd.io_1.6.21-1_amd64.deb
-docker_ce=docker-ce_24.0.1-1~ubuntu.22.04~jammy_amd64.deb
-docker_ce_cli=docker-ce-cli_24.0.1-1~ubuntu.22.04~jammy_amd64.deb  
-docker_compose=docker-compose-plugin_2.18.1-1~ubuntu.22.04~jammy_amd64.deb 
-docker_buildx=docker-buildx-plugin_0.10.4-1~ubuntu.22.04~jammy_amd64.deb
+containerd=containerd.io_1.7.23-1_amd64.deb
+docker_ce=docker-ce_27.3.1-1~ubuntu.22.04~jammy_amd64.deb
+docker_ce_cli=docker-ce-cli_27.3.1-1~ubuntu.22.04~jammy_amd64.deb   
+docker_compose=docker-compose-plugin_2.6.0~ubuntu-jammy_amd64.deb  
+docker_buildx=docker-buildx-plugin_0.17.1-1~ubuntu.22.04~jammy_amd64.deb
 abs_path=$(readlink -f $0)
 prefix_download_dir=`dirname $abs_path`
 #################################

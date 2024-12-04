@@ -12,4 +12,5 @@ maven_download_url=https://downloads.apache.org/maven/maven-3/$maven_version/bin
 wget $maven_download_url -O $install_dir/apache-maven-$maven_version-bin.tar.gz
 tar -xzvf $install_dir/apache-maven-$maven_version-bin.tar.gz -C $install_dir
 rm -rf $install_dir/apache-maven-$maven_version-bin.tar.gz
-ln -sf $install_dir/apache-maven-$maven_version/bin/mvn /usr/bin/mvn
+mv $install_dir/apache-maven-$maven_version /opt/apache-maven-$maven_version
+ln -sf /opt/apache-maven-$maven_version/bin/mvn /usr/bin/mvn

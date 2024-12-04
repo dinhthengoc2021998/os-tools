@@ -1,6 +1,12 @@
 #!/bin/bash
+# Parsing absolute filepath of this script 
+abs_filepath=$(readlink -f $0)
+abs_dirpath=$(dirname $abs_filepath)
+build_dirpath=$abs_dirpath
+echo "Build DirPath: $build_dirpath"
+
 # Download
-install_dir=/opt/install/os-tools
+install_dir=$build_dirpath
 download_url=https://github.com/aristocratos/btop/releases/latest/download/btop-x86_64-linux-musl.tbz
 wget $download_url -O $install_dir/btop.tbz
 

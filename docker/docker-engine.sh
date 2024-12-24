@@ -31,8 +31,8 @@ wget $download_url/$docker_compose --output-document=$prefix_download_dir/$docke
 # --- Install all .rpm files ---
 #################################
 echo $prefix_download_dir/$containerd | xargs sudo dpkg -i
-echo $prefix_download_dir/$docker_ce | xargs sudo dpkg -i
 echo $prefix_download_dir/$docker_ce_cli | xargs sudo dpkg -i
+echo $prefix_download_dir/$docker_ce | xargs sudo dpkg -i
 echo $prefix_download_dir/$docker_buildx | xargs sudo dpkg -i
 echo $prefix_download_dir/$docker_compose | xargs sudo dpkg -i
 

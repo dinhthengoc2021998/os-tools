@@ -6,7 +6,8 @@ cd $install_dir
 
 ## Install NeoVim >= v9.0.1
 # Download appimage
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+nvim_version="v0.10.0"
+curl -LO https://github.com/neovim/neovim/releases/download/$nvim_version/nvim.appimage
 chmod u+x nvim.appimage
 # Extract appimage && expose nvim globally
 ./nvim.appimage --appimage-extract

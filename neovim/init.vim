@@ -30,7 +30,7 @@ Plug 'alvan/vim-closetag'
 Plug 'mattn/emmet-vim'
 
 " /// Code Syntax Highlight ///
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " /// Debugging ///
 Plug 'puremourning/vimspector'
@@ -38,7 +38,7 @@ Plug 'puremourning/vimspector'
 " /// Source Git Version Control ///
 Plug 'tpope/vim-fugitive'
 
-" /// List your plugins here ///
+" /// Default ///
 Plug 'tpope/vim-sensible'          " A sensible set of defaults
 Plug 'itchyny/lightline.vim'       " Lightweight status line
 
@@ -67,7 +67,7 @@ filetype plugin indent on
 set mouse=a
 
 " Use system clipboard
-set clipboard=unnamedplus
+set clipboard+=unnamedplus "Should export DISPLAY=0 in file ~/.bashrc to load `xsel` clipboard tool"
 
 " Indentation settings
 set tabstop=4
@@ -105,6 +105,13 @@ if has('win32')
 else
   set clipboard=unnamedplus
 endif
+
+"""""""""""""""""""""""
+" Key Bindings Default
+"""""""""""""""""""""""
+vnoremap <leader>y "+y
+nnoremap <leader>Y "+Y
+
 
 """""""""""""""""""""""""
 " Loading settings folder

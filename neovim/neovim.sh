@@ -52,6 +52,10 @@ custom_nvim_config() {
     ln -sf $install_dir/init.vim $nvim_dir/init.vim
     ln -sf $install_dir/autoload $nvim_dir/autoload
     ln -sf $install_dir/settings $nvim_dir/settings
+    nvim -c 'PlugInstall'
+
+    # Export Variables: Should put it to ~/.bashrc
+    # export DISPLAY=0 # For use xsel clipboard tool
 }
 add_nvim_provider() {
     # Prerequisite Lib on OS: nodejs >=16; python3-pip
@@ -67,9 +71,9 @@ add_nvim_provider() {
 ##############
 main() {
     # Install Default NVIM
-#    clean_neovim
-#    install_neovim
-#    check_neovim
+    clean_neovim
+    install_neovim
+    check_neovim
     # Install Custom Config for Myself
     custom_nvim_config
     add_nvim_provider

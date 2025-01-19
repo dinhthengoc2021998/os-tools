@@ -47,9 +47,11 @@ check_neovim() {
 ####################
 custom_nvim_config() {
     mkdir -p $nvim_dir
-    mkdir -p $nvim_dir/autoload
-    cp $install_dir/init.vim $nvim_dir/init.vim
-    cp $install_dir/plug.vim $nvim_dir/autoload/plug.vim
+    rm -rf $nvim_dir/autoload
+    rm -rf $nvim_dir/settings
+    ln -sf $install_dir/init.vim $nvim_dir/init.vim
+    ln -sf $install_dir/autoload $nvim_dir/autoload
+    ln -sf $install_dir/settings $nvim_dir/settings
 }
 add_nvim_provider() {
     # Prerequisite Lib on OS: nodejs >=16; python3-pip
@@ -65,9 +67,9 @@ add_nvim_provider() {
 ##############
 main() {
     # Install Default NVIM
-    clean_neovim
-    install_neovim
-    check_neovim
+#    clean_neovim
+#    install_neovim
+#    check_neovim
     # Install Custom Config for Myself
     custom_nvim_config
     add_nvim_provider

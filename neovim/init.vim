@@ -6,13 +6,40 @@ call plug#begin('$HOME/.config/nvim/plugged')
 " /// Color Theme ///
 Plug 'morhetz/gruvbox'
 
-"/// File Browser ///
-Plug 'preservim/nerdtree'
+" /// File Browser ///
+Plug 'preservim/nerdtree'                      " File browser default
+Plug 'xuyuanp/nerdtree-git-plugin'             " Git Status
+Plug 'ryanoasis/vim-devicons'                  " Icon
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
+
+" /// File Search ///
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+" /// Status Bar ///
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" /// Terminal Float ///
+Plug 'voldikss/vim-floaterm'
+
+" /// Code Intelligence ///
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jiangmiao/auto-pairs'
+Plug 'alvan/vim-closetag'
+Plug 'mattn/emmet-vim'
+
+" /// Code Syntax Highlight ///
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+" /// Debugging ///
+Plug 'puremourning/vimspector'
+
+" /// Source Git Version Control ///
+Plug 'tpope/vim-fugitive'
 
 " /// List your plugins here ///
 Plug 'tpope/vim-sensible'          " A sensible set of defaults
-Plug 'preservim/nerdtree'          " File explorer
-Plug 'junegunn/fzf', {'do': './install --all'} " Fuzzy finder
 Plug 'itchyny/lightline.vim'       " Lightweight status line
 
 call plug#end()
@@ -46,7 +73,7 @@ set clipboard=unnamedplus
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set autoindent
+"set autoindent
 set smartindent
 
 " Interface improvements
@@ -71,4 +98,20 @@ set wildmode=longest:full,full
 
 " Terminal with Tmux
 set termguicolors
+
+" Enable copying from vim to clipboard
+if has('win32')
+  set clipboard=unnamed  
+else
+  set clipboard=unnamedplus
+endif
+
+"""""""""""""""""""""""""
+" Loading settings folder
+"""""""""""""""""""""""""
+source $HOME/.config/nvim/settings/nerdtree.vim
+source $HOME/.config/nvim/settings/fzf.vim
+source $HOME/.config/nvim/settings/vim-airline.vim
+source $HOME/.config/nvim/settings/vim-floaterm.vim
+source $HOME/.config/nvim/settings/coc.vim
 

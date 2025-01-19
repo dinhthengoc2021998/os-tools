@@ -9,6 +9,17 @@ nvim_dir=$HOME/.config/nvim
 echo "Installing Directory: $install_dir"
 cd $install_dir
 
+#################
+# Install Neovim
+#################
+clean_neovim() {
+    echo "Start to Clean Config and Old Neovim"
+	sudo rm -rf $HOME/.config/nvim 
+	sudo rm -rf $HOME/.local/share/nvim 
+	sudo rm -rf $HOME/.local/state/nvim
+    echo "Finished cleaning"
+}
+
 install_neovim() {
 	
 	## Install NeoVim >= v9.0.1
@@ -27,12 +38,39 @@ install_neovim() {
 	sudo ln -sf /var/lib/nvim/AppRun /usr/bin/nvim
 }
 check_neovim() {
-  echo "Checking neovim version"
-  nvim --version 
+    echo "Checking neovim version"
+    nvim --version 
 }
+
+####################
+# Custom NVIM Config
+####################
+custom_nvim_config() {
+    mkdir -p $nvim_dir
+    mkdir -p $nvim_dir/autoload
+    cp $install_dir/init.vim $nvim_dir/init.vim
+    cp $install_dir/plug.vim $nvim_dir/autoload/plug.vim
+}
+add_nvim_provider() {
+    # Prerequisite Lib on OS: nodejs >=16; python3-pip
+    sudo apt install -y git python3-pip
+
+    # Install Provider for NVIM
+    npm install neovim -g
+    python3 -m pip install pynvim
+}
+
+##############
+# Execute Main
+##############
 main() {
-  install_neovim
-  check_neovim
+    # Install Default NVIM
+    clean_neovim
+    install_neovim
+    check_neovim
+    # Install Custom Config for Myself
+    custom_nvim_config
+    add_nvim_provider
 }
 
 main

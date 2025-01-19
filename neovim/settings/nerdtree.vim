@@ -10,6 +10,7 @@ nnoremap <silent> <C-n> :NERDTree<CR>
 nnoremap <silent> <C-t> :NERDTreeToggle<CR>
 nnoremap <silent> <C-f> :NERDTreeFind<CR>
 
+let NERDTreeShowHidden=1
 let g:NERDTreeDirArrowExpandable = '▶'
 let g:NERDTreeDirArrowCollapsible = '▼'
 " Use custom symbols for Git status

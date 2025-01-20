@@ -1,5 +1,5 @@
 " Start NERDTree and leave the cursor in it.
-autocmd VimEnter * NERDTree
+"autocmd VimEnter * NERDTree
 
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
@@ -14,7 +14,7 @@ let NERDTreeShowHidden=1
 let g:NERDTreeDirArrowExpandable = '▶'
 let g:NERDTreeDirArrowCollapsible = '▼'
 " Use custom symbols for Git status
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
 \ 'Modified'  : '✹',
 \ 'Staged'    : '✔︎',
 \ 'Untracked' : '✭',

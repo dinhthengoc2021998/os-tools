@@ -106,6 +106,11 @@ else
   set clipboard=unnamedplus
 endif
 
+" Disable backup
+set nobackup
+set nowb
+set noswapfile
+
 """""""""""""""""""""""
 " Key Bindings Default
 """""""""""""""""""""""

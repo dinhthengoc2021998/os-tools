@@ -117,6 +117,11 @@ set noswapfile
 vnoremap <leader>y "+y
 nnoremap <leader>Y "+Y
 
+xnoremap <leader>( c(<C-r>")<Esc>
+xnoremap <leader>{ c{<C-r>"}<Esc>
+xnoremap <leader>" c"<C-r>""<Esc>
+xnoremap <leader>' c'<C-r>"'<Esc>
+
 
 """""""""""""""""""""""""
 " Loading settings folder

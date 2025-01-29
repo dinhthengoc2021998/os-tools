@@ -8,7 +8,7 @@ install_dir=$abs_dirpath
 tmux_dir="$HOME/.config/tmux"
 
 # Install tmux default
-apt-get install -y tmux
+sudo apt-get install -y tmux
 echo $(tmux -V)
 
 # Install Tmux plugins

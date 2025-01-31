@@ -166,6 +166,7 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 """""""""""""""""""""
 " If use coc-pylsp: Run command for the first time
 " `sudo pip install python-lsp-server[all]` 
+" `sudo apt install -y clangd`
 let g:coc_global_extensions = [
     \ 'coc-json', 
     \ 'coc-git',

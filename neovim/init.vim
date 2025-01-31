@@ -70,9 +70,10 @@ set mouse=a
 set clipboard+=unnamedplus "Should export DISPLAY=0 in file ~/.bashrc to load `xsel` clipboard tool"
 
 " Indentation settings
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
+set softtabstop=2
 "set autoindent
 set smartindent
 

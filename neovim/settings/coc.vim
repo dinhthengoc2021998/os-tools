@@ -175,5 +175,7 @@ let g:coc_global_extensions = [
     \ 'coc-yaml',
     \ 'coc-spell-checker',
     \ 'coc-json',
+    \ 'coc-clangd',
+    \ 'coc-clang-format-style-options',
     \ ]
 

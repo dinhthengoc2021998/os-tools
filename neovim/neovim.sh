@@ -56,6 +56,10 @@ custom_nvim_config() {
 
     # Export Variables: Should put it to ~/.bashrc
     # export DISPLAY=0 # For use xsel clipboard tool
+    export_display_cmd=$(who | grep $USER | awk '{print $2}')
+    echo "---------------------------------------------------------------------------------------------------"
+    echo "WARN: To use Clipboard: Should add this line into $HOME/.bashrc: export DISPLAY=$export_display_cmd"
+    echo "---------------------------------------------------------------------------------------------------"
 }
 add_nvim_provider() {
     # Prerequisite Lib on OS: nodejs >=16; python3-pip

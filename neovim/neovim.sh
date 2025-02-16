@@ -52,7 +52,10 @@ custom_nvim_config() {
     ln -sf $install_dir/init.vim $nvim_dir/init.vim
     ln -sf $install_dir/autoload $nvim_dir/autoload
     ln -sf $install_dir/settings $nvim_dir/settings
-    nvim -c 'PlugInstall'
+    nvim -c 'PlugInstall' 
+    nvim -c 'TSInstall all'
+    nvim -c "checkhealth" 
+
 
     # Export Variables: Should put it to ~/.bashrc
     # export DISPLAY=0 # For use xsel clipboard tool

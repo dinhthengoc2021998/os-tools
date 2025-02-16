@@ -29,8 +29,11 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 Plug 'mattn/emmet-vim'
 
+" Install Neovim's built-in LSP support
+Plug 'neovim/nvim-lspconfig'
+
 " /// Code Syntax Highlight ///
-"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " /// Debugging ///
 Plug 'puremourning/vimspector'
@@ -91,7 +94,7 @@ set splitbelow       " Open horizontal splits below
 
 " Faster updates and better performance
 set updatetime=300   " Reduce delay for CursorHold event
-set timeoutlen=500   " Reduce timeout for mapped sequences
+set timeoutlen=200   " Reduce timeout for mapped sequences
 
 " Wildmenu for command-line completion
 set wildmenu
@@ -112,21 +115,11 @@ set nobackup
 set nowb
 set noswapfile
 
-"""""""""""""""""""""""
-" Key Bindings Default
-"""""""""""""""""""""""
-vnoremap <leader>y "+y
-nnoremap <leader>Y "+Y
-
-xnoremap <leader>( c(<C-r>")<Esc>
-xnoremap <leader>{ c{<C-r>"}<Esc>
-xnoremap <leader>" c"<C-r>""<Esc>
-xnoremap <leader>' c'<C-r>"'<Esc>
-
 
 """""""""""""""""""""""""
 " Loading settings folder
 """""""""""""""""""""""""
+source $HOME/.config/nvim/settings/key_bindings.vim
 source $HOME/.config/nvim/settings/nerdtree.vim
 source $HOME/.config/nvim/settings/fzf.vim
 source $HOME/.config/nvim/settings/vim-airline.vim

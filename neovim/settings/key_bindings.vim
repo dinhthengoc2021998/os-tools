@@ -34,3 +34,9 @@ nnoremap <Leader>h <C-w>h
 nnoremap <Leader>j <C-w>j
 nnoremap <Leader>k <C-w>k
 nnoremap <Leader>l <C-w>l
+
+" Resize splits using Ctrl + Arrow keys
+nnoremap <C-Up>    :resize +2<CR>       " Increase height
+nnoremap <C-Down>  :resize -2<CR>       " Decrease height
+nnoremap <C-Left>  :vertical resize -2<CR> " Decrease width
+nnoremap <C-Right> :vertical resize +2<CR> " Increase width

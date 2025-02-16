@@ -25,8 +25,9 @@ vnoremap <S-Tab> <gv
 nnoremap <Leader>w /\S<CR>
 
 " Navigate Error Next/Previous
-nnoremap <silent> <Leader>ne :lua vim.diagnostic.goto_next()<CR>
-nnoremap <silent> <Leader>pe :lua vim.diagnostic.goto_prev()<CR>
+nnoremap <silent> <Leader>ne :lua vim.diagnostic.goto_next({wrap = false})<CR>
+nnoremap <silent> <Leader>pe :lua vim.diagnostic.goto_prev({wrap = false})<CR>
+nnoremap <silent> <Leader>q :lua vim.diagnostic.setloclist()<CR>
 
 " Shorten Pane Navigation
 nnoremap <Leader>h <C-w>h

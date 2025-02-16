@@ -5,10 +5,13 @@
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
 
 " /// NerdTree Binding ///
-nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <leader>b :NERDTreeFocus<CR>
 nnoremap <silent> <C-n> :NERDTree<CR>
 nnoremap <silent> <C-t> :NERDTreeToggle<CR>
 nnoremap <silent> <C-f> :NERDTreeFind<CR>
+" Remove key bindings for NerdTrees
+autocmd FileType nerdtree nunmap <buffer> <Leader>n
+autocmd FileType nerdtree nunmap <buffer> <Leader>ne
 
 let NERDTreeShowHidden=1
 let g:NERDTreeDirArrowExpandable = '▶'

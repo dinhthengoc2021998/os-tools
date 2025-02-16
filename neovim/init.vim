@@ -93,7 +93,7 @@ set splitright       " Open vertical splits to the right
 set splitbelow       " Open horizontal splits below
 
 " Faster updates and better performance
-set updatetime=300   " Reduce delay for CursorHold event
+set updatetime=200   " Reduce delay for CursorHold event
 set timeoutlen=200   " Reduce timeout for mapped sequences
 
 " Wildmenu for command-line completion
@@ -115,7 +115,6 @@ set nobackup
 set nowb
 set noswapfile
 
-
 """""""""""""""""""""""""
 " Loading settings folder
 """""""""""""""""""""""""
@@ -125,4 +124,9 @@ source $HOME/.config/nvim/settings/fzf.vim
 source $HOME/.config/nvim/settings/vim-airline.vim
 source $HOME/.config/nvim/settings/vim-floaterm.vim
 source $HOME/.config/nvim/settings/coc.vim
+
+"""""""""""""""""""""""""
+" Loading Load Lua Config 
+"""""""""""""""""""""""""
+lua require("lsp_config")
 

@@ -10,5 +10,5 @@ nnoremap   <silent>   <F8>    :FloatermPrev<CR>
 tnoremap   <silent>   <F8>    <C-\><C-n>:FloatermPrev<CR>
 nnoremap   <silent>   <F9>    :FloatermNext<CR>
 tnoremap   <silent>   <F9>    <C-\><C-n>:FloatermNext<CR>
-nnoremap   <silent>   ft   :FloatermToggle<CR>
-tnoremap   <silent>   ft   <C-\><C-n>:FloatermToggle<CR>
+nnoremap   <silent>   <Leader>t   :FloatermToggle<CR>
+tnoremap   <silent>   <Leader>t   <C-\><C-n>:FloatermToggle<CR>

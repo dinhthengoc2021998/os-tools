@@ -40,3 +40,10 @@ nnoremap <C-Up>    :resize +2<CR>       " Increase height
 nnoremap <C-Down>  :resize -2<CR>       " Decrease height
 nnoremap <C-Left>  :vertical resize -2<CR> " Decrease width
 nnoremap <C-Right> :vertical resize +2<CR> " Increase width
+
+" Comment multiple lines in visual mode
+vnoremap <C-/> :s/^/#/<CR>
+
+" Scroll Down/Up
+nnoremap <C-j> <C-d> " Scroll down with Ctrl+j
+nnoremap <C-k> <C-u> " Scroll up with Ctrl+k

@@ -118,6 +118,8 @@ set noswapfile
 """""""""""""""""""""""""
 " Loading settings folder
 """""""""""""""""""""""""
+let mapleader=" "
+let maplocalleader=" "
 source $HOME/.config/nvim/settings/key_bindings.vim
 source $HOME/.config/nvim/settings/nerdtree.vim
 source $HOME/.config/nvim/settings/fzf.vim

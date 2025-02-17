@@ -56,8 +56,8 @@ let g:fzf_vim.preview_window = ['right,50%', 'ctrl-/']
 let g:fzf_vim.preview_window = ['hidden,right,50%,<70(up,40%)', 'ctrl-/']
 let g:fzf_vim.preview_window = []
 
-map <silent> <Leader>f :Files<CR>
-map <silent> <C-F6> :History<CR>
+map <silent> fh :History<CR>
+nnoremap <silent> ff :Files<CR>
 
 " Default: Use quickfix list
 let g:fzf_vim.listproc = { list -> fzf#vim#listproc#quickfix(list) }

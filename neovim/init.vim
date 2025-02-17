@@ -29,9 +29,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 Plug 'mattn/emmet-vim'
 
-" Install Neovim's built-in LSP support
-Plug 'neovim/nvim-lspconfig'
-
 " /// Code Syntax Highlight ///
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -126,9 +123,3 @@ source $HOME/.config/nvim/settings/fzf.vim
 source $HOME/.config/nvim/settings/vim-airline.vim
 source $HOME/.config/nvim/settings/vim-floaterm.vim
 source $HOME/.config/nvim/settings/coc.vim
-
-"""""""""""""""""""""""""
-" Loading Load Lua Config 
-"""""""""""""""""""""""""
-lua require("lsp_config")
-

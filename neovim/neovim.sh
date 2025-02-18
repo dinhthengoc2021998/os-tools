@@ -52,10 +52,7 @@ custom_nvim_config() {
     ln -sf $install_dir/init.vim $nvim_dir/init.vim
     ln -sf $install_dir/autoload $nvim_dir/autoload
     ln -sf $install_dir/settings $nvim_dir/settings
-    ln -sf $install_dir/lua $nvim_dir/lua
     nvim -c 'PlugInstall'
-    nvim -c 'PlugUpdate'
-    nvim -c 'TSInstall all'
     nvim -c "checkhealth" 
 
 

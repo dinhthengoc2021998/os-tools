@@ -50,12 +50,23 @@ check_neovim() {
 ####################
 # Custom NVIM Config
 ####################
+add_nvim_provider() {
+    # Prerequisite Lib on OS: nodejs >=16; python3-pip
+    sudo apt install -y git python3-pip fzf lua5.1 luarocks
+
+    # Install Provider for NVIM
+    npm install neovim -g
+    python3 -m pip install pynvim doq
+
+    # Install Lazy.vim
+    git clone --depth 1 https://github.com/folke/lazy.nvim.git ~/.local/share/nvim/lazy/lazy.nvim
+}
 custom_nvim_config() {
     mkdir -p $nvim_dir
     ln -sf $install_dir/init.lua $nvim_dir/init.lua
     ln -sf $install_dir/settings $nvim_dir/settings
-    ln -sf $install_dir/lua/core $nvim_dir/lua/core
-    nvim -c 'Lazy sync' 
+    ln -sf $install_dir/lua $nvim_dir/lua
+    nvim -c 'Lazy install' 
     nvim -c "checkhealth" 
 
 
@@ -67,14 +78,6 @@ custom_nvim_config() {
     echo "WARN: To use Clipboard: Should add this line into $HOME/.bashrc: export DISPLAY=$export_display_cmd"
     echo "WARN: After install: Need to go to nvim -> Use fzf and download binary executable for use fzf later"
     echo "---------------------------------------------------------------------------------------------------"
-}
-add_nvim_provider() {
-    # Prerequisite Lib on OS: nodejs >=16; python3-pip
-    sudo apt install -y git python3-pip
-
-    # Install Provider for NVIM
-    npm install neovim -g
-    python3 -m pip install pynvim doq
 }
 
 ##############

@@ -1,6 +1,11 @@
 local opt = vim.opt
 local g = vim.g
 
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "*",
+  command = "set modifiable",
+})
+
 -- Use Color Theme
 opt.background = "dark"
 vim.cmd("colorscheme gruvbox")

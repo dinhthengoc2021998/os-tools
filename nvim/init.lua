@@ -67,5 +67,6 @@ vim.cmd("source $HOME/.config/nvim/settings/nerdtree.vim")
 vim.cmd("source $HOME/.config/nvim/settings/fzf.vim")
 vim.cmd("source $HOME/.config/nvim/settings/vim-airline.vim")
 vim.cmd("source $HOME/.config/nvim/settings/vim-floaterm.vim")
+vim.cmd("source $HOME/.config/nvim/settings/key_bindings.vim")
 vim.cmd("source $HOME/.config/nvim/settings/coc.lua")
 

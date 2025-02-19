@@ -56,8 +56,8 @@ require("lazy").setup({
   { "itchyny/lightline.vim" },
 })
 
-require("core/options")
-require("core/keymaps")
+require("lua/core/options")
+require("lua/core/keymaps")
 
 -- Load specific plugin configurations
 vim.cmd("source $HOME/.config/nvim/settings/nerdtree.vim")

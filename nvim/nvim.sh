@@ -14,11 +14,15 @@ cd $install_dir
 # Install Neovim
 #################
 clean_neovim() {
-    echo "Start to Clean Config and Old Neovim"
+  echo "Start to Clean Config and Old Neovim"
 	sudo rm -rf $HOME/.config/nvim 
+	sudo rm -rf $HOME/.cache/nvim 
 	sudo rm -rf $HOME/.local/share/nvim 
 	sudo rm -rf $HOME/.local/state/nvim
-    echo "Finished cleaning"
+  sudo rm -rf $nvim_dir/settings
+  sudo rm -rf $nvim_dir/lua
+  sudo rm -rf $coc_dir
+  echo "Finished cleaning"
 }
 
 install_neovim() {
@@ -48,13 +52,11 @@ check_neovim() {
 ####################
 custom_nvim_config() {
     mkdir -p $nvim_dir
-    rm -rf $nvim_dir/settings
-    rm -rf $coc_dir
     ln -sf $install_dir/init.lua $nvim_dir/init.lua
     ln -sf $install_dir/settings $nvim_dir/settings
-    ln -sf $install_dir/core $nvim_dir/core
-    nvim --headless -c 'Lazy sync' +qall
-    nvim --headless -c "checkhealth" +qall
+    ln -sf $install_dir/lua/core $nvim_dir/lua/core
+    nvim -c 'Lazy sync' 
+    nvim -c "checkhealth" 
 
 
     # Export Variables: Should put it to ~/.bashrc

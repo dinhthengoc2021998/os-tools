@@ -48,11 +48,12 @@ check_neovim() {
 ####################
 add_nvim_provider() {
   # Prerequisite Lib on OS: nodejs >=16; python3-pip
+  sudo apt update -y
   sudo apt install -y ripgrep python3-dev python3-venv git python3-pip lua5.1 luarocks
 
   # Install Provider for NVIM
   npm install neovim -g
-  #python3 -m pip install pynvim
+  python3 -m pip install pynvim doq
 
   # Install Lazy.vim
   git clone --depth 1 https://github.com/folke/lazy.nvim.git ~/.local/share/nvim/lazy/lazy.nvim

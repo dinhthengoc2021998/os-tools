@@ -1,14 +1,10 @@
 local opt = vim.opt
+local keymap = vim.keymap
+local api = vim.api
+local cmd = vim.cmd
 local g = vim.g
 
-vim.api.nvim_create_autocmd("BufEnter", {
-  pattern = "*",
-  command = "set modifiable",
-})
-
--- Use Color Theme
-opt.background = "dark"
-vim.cmd("colorscheme gruvbox")
+vim.g.mapleader = " "
 
 -- Encoding and file settings
 opt.encoding = "utf-8"
@@ -19,17 +15,17 @@ opt.number = true
 opt.relativenumber = true
 
 -- Syntax Highlighting & File Type Detection
-vim.cmd("syntax on")
-vim.cmd("filetype plugin indent on")
+cmd("syntax on")
+cmd("filetype plugin indent on")
 
 -- Mouse Support
 opt.mouse = "a"
 
 -- Clipboard Integration
 if vim.fn.has("win32") == 1 then
-  opt.clipboard = "unnamed"
+opt.clipboard = "unnamed"
 else
-  opt.clipboard = "unnamedplus"
+opt.clipboard = "unnamedplus"
 end
 
 -- Indentation
@@ -52,8 +48,8 @@ opt.splitright = true
 opt.splitbelow = true
 
 -- Performance
-opt.updatetime = 200
-opt.timeoutlen = 200
+opt.updatetime = 300
+opt.timeoutlen = 300
 
 -- Wildmenu for command-line completion
 opt.wildmenu = true
@@ -66,4 +62,16 @@ opt.termguicolors = true
 opt.backup = false
 opt.writebackup = false
 opt.swapfile = false
+
+-- move selected lines
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- paste over highlight word
+keymap.set("x", "<leader>p", '"_dP') -- deleted text not stored in clipboard
+opt.colorcolumn = "80"
+
+-- Change Color lineNumber above/below of current line
+api.nvim_set_hl(0, "LineNrAbove", { fg = "white" })
+api.nvim_set_hl(0, "LineNrBelow", { fg = "#ead84e" })
 

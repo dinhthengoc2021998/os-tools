@@ -25,9 +25,6 @@ return {
         null_ls.builtins.formatting.shfmt.with({
           extra_args = { "-i", "2" }, -- Indent with 2 spaces
         }),
-
-        -- Bash Linting
-        null_ls.builtins.diagnostics.shellcheck,
       },
     })
 

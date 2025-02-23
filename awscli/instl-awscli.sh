@@ -10,9 +10,10 @@ echo "Install at build directory: $build_dirpath"
 # Install Lib
 cd $build_dirpath
 apt update -y
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.22.29.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
+rm -rf /usr/local/aws-cli
 rm -rf awscliv2.zip ./aws
 ln -sf /usr/local/bin/aws /usr/bin/aws
 aws --version

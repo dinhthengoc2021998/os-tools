@@ -3,7 +3,7 @@ return {
   config = function()
     require("FTerm").setup({
       border = "rounded", -- Customize border
-      blend = 30,         -- Transparency
+      blend = 10,         -- Transparency
       dimensions = {
         height = 0.8,
         width = 0.8,

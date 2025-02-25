@@ -15,7 +15,7 @@ rm -rf "$git_tmp_dir"
 rm -rf "$tmux_conf_path"
 
 # Install Tmux plugins
-git clone https://github.com/tmux-plugins/tpm "$HOME/tmux/plugins/tpm"
+git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 cp -f "$install_dir/tmux.conf" "$tmux_conf_path"
 
 # Run this to source config file. 

@@ -1,9 +1,8 @@
 #!/bin/bash
 
 # Get Working Dir
-curr_dir=$(pwd)
-abs_filepath=$(readlink -f $0)
-abs_dirpath=$(dirname $abs_filepath)
+abs_filepath=$(readlink -f "$0")
+abs_dirpath=$(dirname "$abs_filepath")
 install_dir=$abs_dirpath
 nvim_dir=$HOME/.config/nvim
 echo "Installing Directory: $install_dir"
@@ -14,10 +13,10 @@ cd $install_dir
 #################
 clean_neovim() {
   echo "Start to Clean Config and Old Neovim"
-  sudo rm -rf $HOME/.cache/nvim
-  sudo rm -rf $HOME/.local/share/nvim
-  sudo rm -rf $HOME/.local/state/nvim
-  sudo rm -rf $nvim_dir
+  sudo rm -rf "$HOME/.cache/nvim"
+  sudo rm -rf "$HOME/.local/share/nvim"
+  sudo rm -rf "$HOME/.local/state/nvim"
+  sudo rm -rf "$nvim_dir"
   echo "Finished cleaning"
 }
 
@@ -30,10 +29,10 @@ install_neovim() {
   chmod u+x nvim.appimage
   # Extract appimage && expose nvim globally
   ./nvim.appimage --appimage-extract
-  rm -rf $install_dir/nvim.appimage
+  rm -rf "$install_dir/nvim.appimage"
   ./squashfs-root/AppRun --version
   sudo rm -rf /var/lib/nvim
-  sudo mv $install_dir/squashfs-root /var/lib/nvim
+  sudo mv "$install_dir/squashfs-root" "/var/lib/nvim"
 
   # Optional: exposing nvim globally.
   sudo ln -sf /var/lib/nvim/AppRun /usr/bin/nvim
@@ -59,9 +58,9 @@ add_nvim_provider() {
   git clone --depth 1 https://github.com/folke/lazy.nvim.git ~/.local/share/nvim/lazy/lazy.nvim
 }
 custom_nvim_config() {
-  mkdir -p $nvim_dir
-  ln -sf $install_dir/init.lua $nvim_dir/init.lua
-  ln -sf $install_dir/lua $nvim_dir/lua
+  mkdir -p "$nvim_dir"
+  cp "$install_dir/init.lua" "$nvim_dir/init.lua"
+  cp -r "$install_dir/lua" "$nvim_dir/lua"
   # Install Lazy.nvim
   nvim --headless -c 'Lazy install' -c 'qall'
 
@@ -73,7 +72,7 @@ custom_nvim_config() {
 
   # Export Variables: Should put it to ~/.bashrc
   # export DISPLAY=0 # For use xsel clipboard tool
-  export_display_cmd=$(who | grep $USER | awk '{print $2}')
+  export_display_cmd=$(who | grep "$USER" | awk '{print $2}')
   echo
   echo "---------------------------------------------------------------------------------------------------"
   echo "WARN: To use Clipboard: Should add this line into $HOME/.bashrc: export DISPLAY=$export_display_cmd"

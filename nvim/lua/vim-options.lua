@@ -69,7 +69,7 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- paste over highlight word
 keymap.set("x", "<leader>p", '"_dP') -- deleted text not stored in clipboard
-opt.colorcolumn = "80"
+-- opt.colorcolumn = "80"
 
 -- Change Color lineNumber above/below of current line
 api.nvim_set_hl(0, "LineNrAbove", { fg = "white" })

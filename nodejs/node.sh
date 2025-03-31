@@ -3,7 +3,7 @@
 # Install NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash
 . $HOME/.bashrc
-nvm_version="16.20.0"
+nvm_version="23.10.0"
 
 # Should run the following cmd outside of this file scripts
 #nvm install $nvm_version

@@ -12,7 +12,7 @@ apt update -y
 apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
 
 # Install Python3
-python3_version="3.12.7"
+python3_version="3.11.11"
 wget https://www.python.org/ftp/python/$python3_version/Python-$python3_version.tgz -O $build_dirpath/Python-$python3_version.tgz
 tar -xzvf $build_dirpath/Python-$python3_version.tgz -C $build_dirpath
 cd $build_dirpath/Python-$python3_version/

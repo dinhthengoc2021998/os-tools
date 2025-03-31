@@ -13,6 +13,7 @@ sudo apt-get install -y tmux
 # Clean Tmux
 rm -rf "$git_tmp_dir"
 rm -rf "$tmux_conf_path"
+rm -rf "$HOME/.tmux"
 
 # Install Tmux plugins
 git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"

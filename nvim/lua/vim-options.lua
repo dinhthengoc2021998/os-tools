@@ -28,9 +28,9 @@ opt.mouse = "a"
 
 -- Clipboard Integration
 if vim.fn.has("win32") == 1 then
-opt.clipboard = "unnamed"
+	opt.clipboard = "unnamed"
 else
-opt.clipboard = "unnamedplus"
+	opt.clipboard = "unnamedplus"
 end
 
 -- Indentation
@@ -81,4 +81,10 @@ api.nvim_set_hl(0, "LineNrAbove", { fg = "white" })
 api.nvim_set_hl(0, "LineNrBelow", { fg = "#ead84e" })
 
 -- Cursor in NVIM
-opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
+opt.guicursor =
+	"n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
+
+--- Fold Code
+-- opt.foldmethod = "syntax"
+opt.foldmethod = "indent"
+opt.foldlevel = 99

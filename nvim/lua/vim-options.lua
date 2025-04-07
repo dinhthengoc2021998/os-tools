@@ -1,3 +1,4 @@
+local vim = vim
 local opt = vim.opt
 local keymap = vim.keymap
 local api = vim.api
@@ -17,6 +18,10 @@ opt.relativenumber = true
 -- Syntax Highlighting & File Type Detection
 cmd("syntax on")
 cmd("filetype plugin indent on")
+cmd("filetype indent off")
+opt.autoindent = false
+opt.smartindent = false
+opt.cindent = false
 
 -- Mouse Support
 opt.mouse = "a"
@@ -75,3 +80,5 @@ keymap.set("x", "<leader>p", '"_dP') -- deleted text not stored in clipboard
 api.nvim_set_hl(0, "LineNrAbove", { fg = "white" })
 api.nvim_set_hl(0, "LineNrBelow", { fg = "#ead84e" })
 
+-- Cursor in NVIM
+opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
